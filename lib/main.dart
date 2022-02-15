@@ -3,8 +3,10 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:inception_lab/screens/home.dart';
 import 'package:inception_lab/screens/splash.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'screens/Login.dart';
+import 'package:get/get.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -25,24 +27,26 @@ class _MyAppState extends State<MyApp> {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-        title: 'Food...',
-        debugShowCheckedModeBanner: false,
-        theme: ThemeData(
-          primarySwatch: Colors.blue,
-        ),
-        home:
-            //Splash()
-            AnimatedSplashScreen(
-          splash: Splash(),
-          nextScreen: 
-          //home(),
-           Login(),
-
-          animationDuration: Duration(seconds: 3),
-          splashIconSize: 2000,
-        )
-        // Login(),
-        );
+    return ScreenUtilInit(
+      designSize: Size(375, 812),
+      builder: () => GetMaterialApp(
+          title: 'Food...',
+          debugShowCheckedModeBanner: false,
+          theme: ThemeData(
+            primarySwatch: Colors.blue,
+          ),
+          home:
+              //Splash()
+              AnimatedSplashScreen(
+            splash: Splash(),
+            nextScreen:
+                //home(),
+                Login(),
+            animationDuration: Duration(seconds: 3),
+            splashIconSize: 2000,
+          )
+          // Login(),
+          ),
+    );
   }
 }
