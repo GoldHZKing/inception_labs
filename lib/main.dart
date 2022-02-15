@@ -35,10 +35,10 @@ class _MyAppState extends State<MyApp> {
             //Splash()
             AnimatedSplashScreen(
           splash: Splash(),
-          nextScreen:
-           //home(),
-          Login(),
-         
+          nextScreen: 
+          //home(),
+           Login(),
+
           animationDuration: Duration(seconds: 3),
           splashIconSize: 2000,
         )

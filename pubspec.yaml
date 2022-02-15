@@ -46,6 +46,8 @@ dependencies:
   bottom_navy_bar: ^6.0.0
   material_floating_search_bar: ^0.3.6
   carousel_slider: ^4.0.0
+  font_awesome_flutter: ^9.2.0
+  flutter_screenutil: ^5.2.0
 
 dev_dependencies:
   flutter_test:
@@ -89,7 +91,10 @@ flutter:
   # "family" key with the font family name, and a "fonts" key with a
   # list giving the asset and other descriptors for the font. For
   # example:
-  # fonts:
+  fonts:
+    - family:  Meals
+      fonts:
+       - asset: assets/icons/Meals.ttf
   #   - family: Schyler
   #     fonts:
   #       - asset: fonts/Schyler-Regular.ttf

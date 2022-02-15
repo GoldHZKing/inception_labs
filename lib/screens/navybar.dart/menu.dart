@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:material_floating_search_bar/material_floating_search_bar.dart';
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class Menu extends StatefulWidget {
   Menu({Key? key}) : super(key: key);
@@ -48,7 +49,9 @@ class _MenuState extends State<Menu> {
                     decoration: const BoxDecoration(
                         borderRadius: BorderRadius.all(Radius.circular(2))),
                     child: FloatingSearchAppBar(
-                      leadingActions: [],
+                      automaticallyImplyBackButton: false,
+                     // leadingActions: [Icon(Icons.)],
+
                       //color: Colors.blue.shade50,
                       //alwaysOpened: true,
                       hint: "Finf for food",
