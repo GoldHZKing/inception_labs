@@ -23,18 +23,18 @@ void onLoading({required BuildContext context, String? value}) {
           onWillPop: () async => false,
           child: Dialog(
               child: Container(
-            padding: EdgeInsets.only(top: 20, bottom: 20, left: 20, right: 20),
-            child: new Row(
+            padding: const EdgeInsets.only(top: 20, bottom: 20, left: 20, right: 20),
+            child:  Row(
               children: [
-                new CircularProgressIndicator(
+                const CircularProgressIndicator(
                   valueColor: AlwaysStoppedAnimation<Color>(primaryColor),
                 ),
-                SizedBox(
+                const SizedBox(
                   width: 20,
                 ),
-                new Text(
+                 Text(
                   value ?? "Loading . . .",
-                  style: TextStyle(
+                  style: const TextStyle(
                       color: Colors.grey,
                       fontSize: 16,
                       fontWeight: FontWeight.w600),
