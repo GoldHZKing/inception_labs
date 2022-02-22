@@ -1,6 +1,7 @@
 import 'package:country_code_picker/country_code_picker.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:inception_lab/models/phone_auth.dart';
 import 'package:inception_lab/screens/home.dart';
 import 'package:inception_lab/utils/utils.dart';
 import 'package:flutter/gestures.dart';
@@ -16,6 +17,8 @@ class Login extends StatefulWidget {
 }
 
 class _LoginState extends State<Login> {
+  final Phone_Auth phone_auth = Phone_Auth();
+  get verify => phone_auth.verification_ID;
   String _selectedCountry = "+91";
   String verificationId = "";
   FirebaseAuth _auth = FirebaseAuth.instance;
@@ -36,10 +39,6 @@ class _LoginState extends State<Login> {
               print("Verifcation Complete ${credential.smsCode}");
               await _auth.signInWithCredential(credential).then((value) async {
                 Get.offAll(() => home());
-
-                // Navigator.
-                // pushReplacement(
-                //     context, MaterialPageRoute(builder: (context) => home()));
               }).onError((error, stackTrace) {
                 print(error);
                 showToastMsg(null);
@@ -79,6 +78,7 @@ class _LoginState extends State<Login> {
 
     return Scaffold(
       body: verificationId != ""
+          // verify != ""
           ? Padding(
               padding: EdgeInsets.symmetric(horizontal: wid * 0.1),
               child: Center(
@@ -244,6 +244,9 @@ class _LoginState extends State<Login> {
                   // EdgeInsets.symmetric(
                   // horizontal: wid * 0.2, vertical: hei * 0.02),
                   onPressed: () {
+                    // phone_auth.Login_with_phone_No(
+                    //     "$_selectedCountry${phonecontroller.text}",
+                    //     "${otpcontroller.text}");
                     Login_with_Ph_No(
                       "$_selectedCountry${phonecontroller.text}",
                     );

@@ -36,8 +36,9 @@ class _MenuState extends State<Menu> {
                         borderRadius: BorderRadius.circular(15.r)),
                     elevation: 10,
                     child: Container(
-                      height: 40.h,
-                      width: 50.r,
+                      padding: EdgeInsets.all(2.sp),
+                      // height: 40.h,
+                      // width: 50.r,
                       // height: hei * 0.06,
                       // width: wid * 0.15,
                       child: IconButton(
@@ -73,10 +74,11 @@ class _MenuState extends State<Menu> {
                         borderRadius: BorderRadius.circular(15.r)),
                     elevation: 10,
                     child: Container(
+                      padding: EdgeInsets.all(2.sp),
                       // height: hei * 0.06,
                       // width: wid * 0.15,
-                      height: 40.h,
-                      width: 50.r,
+                      // height: 40.h,
+                      // width: 50.r,
                       child: IconButton(
                           onPressed: () {},
                           icon: Icon(
